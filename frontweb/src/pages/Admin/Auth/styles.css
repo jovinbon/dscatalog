@@ -61,10 +61,15 @@
 
   .auth-banner-container h1 {
     font-size: 55px;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
   }
 
   .auth-banner-container p {
     font-size: 24px;
+  }
+
+  .auth-banner-container svg {
+    width: 530px;
+    height: 460px;
   }
 }
