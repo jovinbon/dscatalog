@@ -67,22 +67,28 @@ export const getAuthData = () => {
   return JSON.parse(str) as LoginResponse;
 };
 
-
-
 // Add a request interceptor
-axios.interceptors.request.use(function (config) {
-  }, function (error) {
+axios.interceptors.request.use(
+  function (config) {
+    //
+    return config;
+  },
+  function (error) {
+    //
     return Promise.reject(error);
-  });
+  }
+);
 
 // Add a response interceptor
-axios.interceptors.response.use(function (response) {
+axios.interceptors.response.use(
+  function (response) {
+    //
     return response;
-  }, function (error) {
-    
-    if (error.response.status === 401 || error.response.status === 403){
-       history.push('/admin/auth');
+  },
+  function (error) {
+    if (error.response.status === 401) {
+      history.push('/admin/auth');
     }
-
     return Promise.reject(error);
-  });
+  }
+);
