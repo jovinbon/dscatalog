@@ -19,7 +19,7 @@ const NavBar = () => {
       });
     } else {
       setAuthContextData({
-        authenticated: true,
+        authenticated: false,
       });
     }
   }, [setAuthContextData]);
