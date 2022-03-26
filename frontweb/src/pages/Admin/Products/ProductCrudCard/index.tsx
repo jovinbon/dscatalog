@@ -15,15 +15,19 @@ const ProductCrudCard = ({ product }: Props) => {
         <img src={product.imgUrl} alt={product.name} />
       </div>
       <div>
-        <div className="product-crud-card-bottom-container">
+        <div className="product-crud-card-buttom-container">
           <h6>{product.name}</h6>
           <ProductPrice price={product.price} />
         </div>
         <div className="product-crud-categories-container">
           {product.categories.map((category) => (
-            <CategoryBadge name={category.name}  key={category.id}/>
+            <CategoryBadge name={category.name} key={category.id} />
           ))}
         </div>
+      </div>
+      <div className="product-crud-card-buttons-container">
+        <button className="btn btn-outline-danger product-crud-card-buttom product-crud-card-buttom-first">EXCLUIR</button>
+        <button className="btn btn-outline-secondary product-crud-card-buttom">EDITAR</button>
       </div>
     </div>
   );
