@@ -22,7 +22,7 @@ const Form = () => {
             </div>
             <div className="col-lg-6">
               <div>
-                <textarea name="" rows={10} className="form-control h-auto base-input" />
+                <textarea name="" rows={8.9} className="form-control h-auto base-input" />
               </div>
             </div>
           </div>
