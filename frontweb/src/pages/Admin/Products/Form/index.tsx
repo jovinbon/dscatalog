@@ -50,13 +50,10 @@ const Form = () => {
 
   const onSubmit = (productData: Product) => {
 
-    const data = {...productData, imgUrl: isEditing ? productData.imgUrl : "https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/3-big.jpg", 
-                                  categories: isEditing ? productData.categories : [ {id: 1, name: ""} ]};
-
     const config: AxiosRequestConfig = {
       method: isEditing ? 'PUT' : 'POST',
       url: isEditing ? `/products/${productId}` : "/products",
-      data,
+      data: productData,
       withCredentials: true
     };
 
@@ -121,6 +118,22 @@ const Form = () => {
                     name="price"
                   />
                   <div className="invalid-feedback d-block">{errors.price?.message}</div>
+              </div>
+              <div className="margin-bottom-30">
+                  <input
+                    {...register('imgUrl', {
+                      required: 'Campo obrigatório.',
+                      pattern: {
+                          value: /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm,
+                          message: 'Deve ser uma URL válida'
+                      }
+                    })}
+                    type="text"
+                    className={`form-control base-input ${errors.imgUrl ? 'is-invalid' : ''}`}
+                    placeholder="URL imagem do produto"
+                    name="imgUrl"
+                  />
+                  <div className="invalid-feedback d-block">{errors.imgUrl?.message}</div>
               </div>
               <button className="btn btn-secondary text-white">ADICIONAR IMAGEM</button>
               <p>As imagens devem ser JPG ou PNG e não devem ultrapassar 5mb.</p>
