@@ -1,8 +1,9 @@
 import { AxiosRequestConfig } from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router-dom';
 import Select from 'react-select';
+import { Category } from 'types/category';
 import { Product } from 'types/product';
 import { requestBackend } from 'util/requests';
 import './styles.css';
@@ -14,6 +15,8 @@ type urlParams = {
 const Form = () => {
 
   const { productId } = useParams<urlParams>();
+
+  const [selectCategories, setSelectCategories] = useState<Category[]>([]);
 
   const isEditing = productId !== 'create';
 
@@ -37,6 +40,13 @@ const Form = () => {
     }
   }, [isEditing, productId, setValue]);
 
+  useEffect(() => {
+    requestBackend({url: "/categories"})
+      .then(response => {
+        setSelectCategories(response.data.content);
+      })
+  }, []);
+
 
   const onSubmit = (productData: Product) => {
 
@@ -55,12 +65,6 @@ const Form = () => {
         history.push("/admin/products");
       });
   };
-
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
 
   const handleCancel = () => {
      history.push("/admin/products");
@@ -85,15 +89,15 @@ const Form = () => {
                   />
                   <div className="invalid-feedback d-block">{errors.name?.message}</div>
               </div>
-
               <div className="margin-bottom-30">
                   <Select 
-                  options={options}
-                  classNamePrefix="product-crud-select"
-                  isMulti
+                    options={selectCategories}
+                    classNamePrefix="product-crud-select"
+                    isMulti
+                    getOptionLabel={(category: Category) => category.name}
+                    getOptionValue={(category: Category) => String(category.id)}
                   />
               </div>
-
               <div className="margin-bottom-30">
                   <input
                     {...register('price', {
