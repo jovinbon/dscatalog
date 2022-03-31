@@ -1,9 +1,9 @@
 .catalog-container {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .catalog-title-container {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .catalog-title-container h1 {
@@ -14,6 +14,6 @@
 
 @media (min-width: 576px) {
   .catalog-container {
-    font-size: 30px;
+    font-size: 27px;
   }
 }
