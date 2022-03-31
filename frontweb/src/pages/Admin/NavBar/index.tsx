@@ -5,8 +5,8 @@ import './styles.css';
 const NavBar = () => {
   return (
     <nav className="admin-nav-container">
-      <ul>
-        <li className="admin-nav-items-container">
+      <ul className="admin-nav-items-container">
+        <li>
           <NavLink to="/admin/products" className="admin-nav-item">
             <p>Produtos</p>
           </NavLink>
