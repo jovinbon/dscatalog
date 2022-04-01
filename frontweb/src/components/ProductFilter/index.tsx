@@ -1,4 +1,5 @@
 import { ReactComponent as SearchIcon } from 'assets/images/search-icon.svg';
+import { type } from 'os';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import Select from 'react-select';
@@ -7,19 +8,23 @@ import { requestBackend } from 'util/requests';
 
 import './styles.css';
 
-type ProductFilterData = {
+export type ProductFilterData = {
   name: string;
   category: Category | null;
 }
 
-const ProductFilter = () => {
+type Props = {
+  onSubmitFilter: (data: ProductFilterData) => void;
+}
+
+const ProductFilter = ( { onSubmitFilter } : Props) => {
 
   const { register, handleSubmit, setValue, getValues, control } = useForm<ProductFilterData>();
 
   const [selectCategories, setSelectCategories] = useState<Category[]>([]);
 
   const onSubmit = (filterData: ProductFilterData) => {
-    console.log(filterData);
+    onSubmitFilter(filterData);
   }
 
   const handleFormClear = () => {
@@ -35,7 +40,7 @@ const ProductFilter = () => {
       category: getValues('category')
     }
      
-     console.log('ENVIOU', obj);
+    onSubmitFilter(obj);
   };
 
   useEffect(() => {
