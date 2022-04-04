@@ -1,5 +1,4 @@
 import { ReactComponent as SearchIcon } from 'assets/images/search-icon.svg';
-import { type } from 'os';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import Select from 'react-select';
