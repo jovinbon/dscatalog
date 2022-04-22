@@ -26,7 +26,7 @@
 
 @media (min-width: 1200px) {
   .auth-container {
-    padding: 40px;
+    padding: 20px;
   }
 
   .auth-banner-container {
@@ -50,26 +50,32 @@
   }
 
   .auth-banner-container svg {
-    width: 100%;
+    width: 400px;
+    height: 350px;
   }
 }
 
 @media (min-width: 1400px) {
+  .auth-container {
+    padding: 30px;
+  }
+
   .auth-banner-container {
-    width: 650px;
+    margin-top: 20px;
+    width: 600px;
   }
 
   .auth-banner-container h1 {
-    font-size: 55px;
-    margin-bottom: 22px;
+    font-size: 45px;
+    margin-bottom: 14px;
   }
 
   .auth-banner-container p {
-    font-size: 24px;
+    font-size: 25px;
   }
 
   .auth-banner-container svg {
-    width: 530px;
-    height: 460px;
+    width: 400px;
+    height: 350px;
   }
 }

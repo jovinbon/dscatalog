@@ -101,3 +101,14 @@
     display: unset;
   }
 }
+
+@media (min-width: 1200px) {
+  .product-filter-container {
+    padding: 5px 10px;
+    width: 800px;
+  }
+
+  .btn-product-filter-clear {
+    font-size: 12px;
+  }
+}

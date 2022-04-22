@@ -4,22 +4,22 @@
 
 .product-crud-form-title {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
   letter-spacing: -0.015em;
   color: #263238;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .margin-bottom-30 {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .product-crud-inputs-container {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .product-crud-inputs-left-container {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .product-crud-buttons-container {
@@ -28,8 +28,8 @@
 }
 
 .product-crud-buttom {
-  height: 50px;
-  width: 110px;
+  height: 40px;
+  width: 90px;
   border-radius: 10px;
   font-weight: bold;
 }

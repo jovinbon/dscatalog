@@ -92,10 +92,12 @@ const Form = () => {
                     className={`form-control base-input ${errors.name ? 'is-invalid' : ''}`}
                     placeholder="Nome do produto"
                     name="name"
+                    data-testid="name"
                   />
                   <div className="invalid-feedback d-block">{errors.name?.message}</div>
               </div>
               <div className="margin-bottom-30">
+                  <label htmlFor="categories" className='d-none'>Categorias</label>
                   <Controller 
                     name="categories"
                     rules={{required: true}}
@@ -107,6 +109,7 @@ const Form = () => {
                         isMulti
                         getOptionLabel={(category: Category) => category.name}
                         getOptionValue={(category: Category) => String(category.id)}
+                        inputId="categories"
                     />
                     )}
                   />  
@@ -128,6 +131,7 @@ const Form = () => {
                       disableGroupSeparators={true}
                       value={field.value}
                       onValueChange={field.onChange}
+                      data-testid="price"
                       />
                     )}
                   />
@@ -146,6 +150,7 @@ const Form = () => {
                     className={`form-control base-input ${errors.imgUrl ? 'is-invalid' : ''}`}
                     placeholder="URL imagem do produto"
                     name="imgUrl"
+                    data-testid="imgUrl"
                   />
                   <div className="invalid-feedback d-block">{errors.imgUrl?.message}</div>
               </div>
@@ -162,6 +167,7 @@ const Form = () => {
                 className={`form-control base-input h-auto ${errors.description ? 'is-invalid' : ''}`}
                 placeholder="Descrição" 
                 name="description"
+                data-testid="description"
                 />
                 <div className="invalid-feedback d-block">{errors.description?.message}</div>
               </div>

@@ -7,7 +7,8 @@
 }
 
 .catalog-title-container h1 {
-  font-size: 1em;
+  font-size: 0.9em;
+  margin-bottom: 4px;
   letter-spacing: -0.015em;
   color: #263238;
 }
@@ -15,5 +16,29 @@
 @media (min-width: 576px) {
   .catalog-container {
     font-size: 27px;
+  }
+}
+
+@media (min-width: 765px) {
+  .catalog-container {
+    font-size: 20px;
+  }
+
+  .catalog-title-container h1 {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 992px) {
+  .catalog-container {
+    font-size: 18px;
+    padding: 10px 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog-container {
+    font-size: 18px;
+    padding: 10px 100px;
   }
 }

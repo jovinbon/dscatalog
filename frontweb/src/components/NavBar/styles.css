@@ -1,6 +1,10 @@
 .main-nav {
     padding-left: 40px;
-    min-height: 70px;
+    min-height: 50px;
+}
+
+.container-fluid h4 {
+    font-size: 20px;
 }
 
 .nav-logo-text, .nav-logo-text:hover {
@@ -9,7 +13,7 @@
 
 .main-menu {
     display: flex;
-    font-size: 18px;
+    font-size: 14px;
     width: 380px;
     justify-content: space-between;
 }
@@ -38,6 +42,7 @@
 @media (min-width: 768px) {
     .nav-login-logout {
         display: unset;
+        font-size: 12px;
         color: #FFF;
         margin-right: 15px;
     }
@@ -45,7 +50,7 @@
 
 @media (min-width: 992px) {
     .nav-login-logout {
-        margin-right: 40px;
+        margin-right: 130px;
     }
 
     .nav-username {

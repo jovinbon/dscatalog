@@ -1,11 +1,11 @@
-.admin-nav-items-container {
-    display: flex;
-    justify-content: space-around;
-}
-
 .admin-nav-container {
     padding: 10px;
     background-color: #FFF;
+}
+
+.admin-nav-items-container {
+    display: flex;
+    justify-content: space-around;
 }
 
 .admin-nav-item {
@@ -16,7 +16,7 @@
     background-color: #F2F2F2;
     border-radius: 100px;
     padding: 0 10px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: -0.015em;
     color: #9E9E9E;
@@ -45,17 +45,27 @@
 
     .admin-nav-container {
         padding: 0;
-        width: 300px;
+        width: 230px;
         height: calc(100vh - 70px);
     }
 
     .admin-nav-item {
         border-radius: 0;
-        font-size: 18px;
-        height: 80px;
+        font-size: 14px;
+        height: 65px;
         background-color: #FFF;
         border-bottom: 1px solid #E1E1E1;
         justify-content: flex-start;
-        padding-left: 40px;
+        padding-left: 50px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .admin-nav-container {
+        width: 230px;
+    }
+
+    .admin-nav-item {
+        font-size: 16px;
     }
 }
