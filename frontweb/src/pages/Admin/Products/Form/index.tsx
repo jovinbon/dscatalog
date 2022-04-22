@@ -86,7 +86,7 @@ const Form = () => {
               <div className="margin-bottom-30">
                   <input
                     {...register('name', {
-                        required: 'Campo obrigatório.'
+                        required: 'Campo obrigatório'
                     })}
                     type="text"
                     className={`form-control base-input ${errors.name ? 'is-invalid' : ''}`}
@@ -140,7 +140,7 @@ const Form = () => {
               <div className="margin-bottom-30">
                   <input
                     {...register('imgUrl', {
-                      required: 'Campo obrigatório.',
+                      required: 'Campo obrigatório',
                       pattern: {
                           value: /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm,
                           message: 'Deve ser uma URL válida'
@@ -162,7 +162,7 @@ const Form = () => {
                 <textarea 
                 rows={8.9} 
                 {...register('description', {
-                  required: 'Campo obrigatório.'
+                  required: 'Campo obrigatório'
                 })}
                 className={`form-control base-input h-auto ${errors.description ? 'is-invalid' : ''}`}
                 placeholder="Descrição" 
