@@ -39,7 +39,7 @@ const List = () => {
       url: "/products",
       params: {
         page: controlComponentsData.activePage,
-        size: 4,
+        size: 3,
         name: controlComponentsData.filterData.name,
         categoryId: controlComponentsData.filterData.category?.id
       },
